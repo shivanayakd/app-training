@@ -1,0 +1,22 @@
+h1 {
+    color: rgb(221, 46, 46);
+    margin: 15px;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin: 15px;
+}
+
+.inval {
+    margin: 15px;
+    font-size: 1.3em;
+    color: rgb(28, 5, 231);
+}
+
+button {
+    padding: 5px 10px;
+}
