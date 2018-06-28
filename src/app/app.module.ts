@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent} from './nav/navigation.component';
 import { MainComponent } from './main/main.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { MydirectivesComponent } from './mydirectives/mydirectives.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DatabindingComponent } from './databinding/databinding.component';
     AppComponent,
     NavigationComponent,
     MainComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    MydirectivesComponent
   ],
   imports: [
     BrowserModule,

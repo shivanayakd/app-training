@@ -1,0 +1,41 @@
+<!-- 
+  What is a driective? - modifiying the dom / modifing the apperiance or behaviour of the DOM
+
+  Structural Directive - *ngIf , *ngFor
+  Attribute Directives - ngClass, ngStyle
+ -->
+
+ <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+       <h2>Directive in Angular</h2>
+       <br><hr><br>
+       
+       
+       <!-- <button type="button" class="btn btn-large btn-block btn-danger" (click)="checngetable()">Toggle table</button> -->
+       <h2 class="left">List of Items</h2><br>
+        
+        <div class="input-group right">
+          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search" [(ngModel)]="max">
+         </div>
+        
+       <table *ngIf="showtable" class="table table-striped table-hover">
+         <thead>
+           <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Cost</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let item of itemlist; let i = index">
+             <td *ngIf="max > item.cost">{{ i+1 }}</td>
+             <td *ngIf="max > item.cost">{{ item.name }}</td>
+             <td *ngIf="max > item.cost">{{ item.cost }}$</td>
+           </tr>
+         </tbody>
+       </table>
+       
+     </div>
+   </div>
+ </div>

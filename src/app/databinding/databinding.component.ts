@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./databinding.component.css']
 })
 export class DatabindingComponent implements OnInit {
-  inval: number = 25;
-  istextboxactive:boolean = false;
+  inval: number;
+  istextboxactive: boolean;
   constructor() { }
 
   ngOnInit() {
+    this.inval = 25;
+    this.istextboxactive  = false;
   }
 
   activatetextbox() {
@@ -21,11 +23,10 @@ export class DatabindingComponent implements OnInit {
     return this.inval;
   }
 
-  counter(i) {
-    if(i == 0) {
+  counter(i: any) {
+    if (i === 0) {
       this.inval--;
-    }
-    else if(i == 1 ){
+    } else if (i === 1 ) {
       this.inval++;
     }
   }
