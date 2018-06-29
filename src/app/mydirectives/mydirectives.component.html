@@ -9,11 +9,12 @@
    <div class="row">
      <div class="col-md-12">
        <h2>Directive in Angular</h2>
+       <h4 appChangecolor>Testing the custom directive</h4>
        <br><hr><br>
        
        
        <!-- <button type="button" class="btn btn-large btn-block btn-danger" (click)="checngetable()">Toggle table</button> -->
-       <h2 class="left">List of Items</h2><br>
+       <h2 class="left" appChangecolor>List of Items</h2><br>
         
         <div class="input-group right">
           <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search" [(ngModel)]="max">
@@ -28,13 +29,21 @@
            </tr>
          </thead>
          <tbody>
-           <tr *ngFor="let item of itemlist; let i = index">
-             <td *ngIf="max > item.cost">{{ i+1 }}</td>
+           <!-- <tr *ngFor="let item of itemlist; let ind = index" [ngStyle]="{'color': item.cost < 100 ? 'green' : 'red'}"> -->
+           <!-- <tr *ngFor="let item of itemlist; let ind = index" [ngStyle]="setColor(item.cost)" [ngClass]="{'onsale': item.cost < 80}"> -->
+           <tr *ngFor="let item of itemlist; let ind = index" [ngStyle]="setColor(item.cost)" [ngClass]="{'onsale': item.cost < 80, 'testclass': true}">
+             <td *ngIf="max > item.cost">{{ ind+1 }}</td>
              <td *ngIf="max > item.cost">{{ item.name }}</td>
              <td *ngIf="max > item.cost">{{ item.cost }}$</td>
            </tr>
          </tbody>
        </table>
+
+       <div appCard>
+         <h2>testing the card using Render</h2>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit cum totam excepturi temporibus eaque pariatur magnam, quasi exercitationem dolorum explicabo, libero laborum tempora deleniti molestias suscipit! Libero, blanditiis sint! Culpa.</p>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit cum totam excepturi temporibus eaque pariatur magnam, quasi exercitationem dolorum explicabo, libero laborum tempora deleniti molestias suscipit! Libero, blanditiis sint! Culpa.</p>
+       </div>
        
      </div>
    </div>

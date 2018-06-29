@@ -10,7 +10,7 @@ export class MydirectivesComponent implements OnInit {
   itemlist: Array<any>;
   max: number;
   ngOnInit() {
-    this.max = 55;
+    this.max = 955;
     this.showtable = true;
     this.itemlist = [
       {name: 'milk', cost: 25 },
@@ -25,4 +25,13 @@ export class MydirectivesComponent implements OnInit {
   // checngetable() {
   //   this.showtable = !this.showtable;
   // }
+
+  setColor(cost: number) {
+    console.log('cost of item:', cost);
+    if (cost < 100) {
+      return {'color': 'green'};
+    } else {
+      return { 'color': 'red'};
+    }
+  }
 }

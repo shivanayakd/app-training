@@ -10,3 +10,14 @@ button {
     float: right;
     margin-bottom: 20px;
 }
+
+.onsale {
+    background-color: aquamarine !important;
+}
+
+.card {
+    background-color: aquamarine;
+    box-shadow: 0 0 11px 5px #ccc;
+    border-radius: 15px;
+    padding: 10px 40px;
+}

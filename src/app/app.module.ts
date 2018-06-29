@@ -7,6 +7,8 @@ import { NavigationComponent} from './nav/navigation.component';
 import { MainComponent } from './main/main.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { MydirectivesComponent } from './mydirectives/mydirectives.component';
+import { ChangecolorDirective } from './directives/changecolor.directive';
+import { CardDirective } from './directives/card.directive';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { MydirectivesComponent } from './mydirectives/mydirectives.component';
     NavigationComponent,
     MainComponent,
     DatabindingComponent,
-    MydirectivesComponent
+    MydirectivesComponent,
+    ChangecolorDirective,
+    CardDirective
   ],
   imports: [
     BrowserModule,
