@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { Item } from '../models/item.model';
 
 @Component({
   selector: 'app-mydirectives',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MydirectivesComponent implements OnInit {
   showtable: boolean;
-  itemlist: Array<any>;
+  itemlist: Array<Item>;
   max: number;
   ngOnInit() {
     this.max = 955;
@@ -18,8 +19,7 @@ export class MydirectivesComponent implements OnInit {
       {name: 'oil', cost: 75 },
       {name: 'Flour', cost: 175 },
       {name: 'cheese', cost: 55 },
-      {name: 'apples', cost: 95 }
-    ];
+      {name: 'apples', cost: 95 }];
   }
 
   // checngetable() {

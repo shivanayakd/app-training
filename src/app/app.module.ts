@@ -9,6 +9,8 @@ import { DatabindingComponent } from './databinding/databinding.component';
 import { MydirectivesComponent } from './mydirectives/mydirectives.component';
 import { ChangecolorDirective } from './directives/changecolor.directive';
 import { CardDirective } from './directives/card.directive';
+import { CinterComponent } from './cinter/cinter.component';
+import { CsubinterComponent } from './cinter/csubinter/csubinter.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CardDirective } from './directives/card.directive';
     DatabindingComponent,
     MydirectivesComponent,
     ChangecolorDirective,
-    CardDirective
+    CardDirective,
+    CinterComponent,
+    CsubinterComponent
   ],
   imports: [
     BrowserModule,
