@@ -1,0 +1,122 @@
+<!-- 
+  Forms
+  1) Template driven - build the form in template
+  2) Reactive forms - it's not build in template
+ -->
+
+<div class="container">
+  <h1>Reactive Forms</h1>
+  <div class="row">
+    <div class="col-md-6">
+        <br>
+        <br>
+        <br>
+        <form [formGroup]="myreactivefrm" (ngSubmit)="myreactiveformsubmit()">
+          <legend>Create Menu Item</legend>
+          <br/>
+          <div class="form-group">
+            <label for="">Enter Item Name</label>
+            <input type="text" class="form-control" id="" placeholder="Input field" formControlName="rname">
+            <span *ngIf="myreactivefrm.get('rname').touched && myreactivefrm.get('rname').invalid && myreactivefrm.get('rname').errors.required" style="color: red;font-size: 0.7em">Name is required</span>
+            <span *ngIf="myreactivefrm.get('rname').touched && myreactivefrm.get('rname').invalid && myreactivefrm.get('rname').errors.minlength" style="color: red;font-size: 0.7em">Name should have minimum 5 characters</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="">Select Category</label>
+            <select class="form-control" formControlName="rcategory">
+              <option [value]="cat" *ngFor="let cat of category">
+                {{ cat }}</option>
+            </select>
+            
+          </div>
+
+          <div class="form-group">
+            <label for="">Cost</label>
+            <input type="number" class="form-control" id="" placeholder="Input field" formControlName="rcost">
+          </div>
+          
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+    <div class="col-md-6">
+      <br>
+      <br>
+      <br>
+      <h3>Menu Items</h3>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of menuItems">
+          {{ item.name + '--' + item.category + '--' + item.cost}}
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <h1>template driven Forms</h1>
+  <div class="row">
+    <div class="col-md-6">
+        <br>
+        <br>
+        <br>
+        <!-- <form #f="ngForm" (ngSubmit)="submitValues(f)"> -->
+        <form #f="ngForm" (ngSubmit)="submitValues()">
+          <legend>Create Menu Item</legend>
+          <br/>
+          <div class="form-group">
+            <label for="">Enter Item Name</label>
+            <input type="text" class="form-control" name="name" id="" placeholder="Input field" ngModel required minlength="5" #iname="ngModel">
+            <span *ngIf="iname.invalid && iname.touched && iname.errors.required" style="color:red;font-size: 0.7em;">Item name is required</span>
+            <span *ngIf="iname.invalid && iname.touched && iname.errors.minlength" style="color:red;font-size: 0.7em;">Item name should be more then 5 characters</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="">Select Category</label>
+            <select name="category" class="form-control" required ngModel>
+              <option [value]="cat" *ngFor="let cat of category">
+                {{ cat }}</option>
+            </select>
+            
+          </div>
+
+          <div class="form-group">
+            <label for="">Cost</label>
+            <input type="number" name="cost" class="form-control" id="" placeholder="Input field" required ngModel>
+          </div>
+          
+        
+          <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+    <div class="col-md-6">
+      <br>
+      <br>
+      <br>
+      <h3>Menu Items</h3>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of menuItems">
+          {{ item.name + '--' + item.category + '--' + item.cost}}
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent} from './nav/navigation.component';
@@ -11,6 +11,7 @@ import { ChangecolorDirective } from './directives/changecolor.directive';
 import { CardDirective } from './directives/card.directive';
 import { CinterComponent } from './cinter/cinter.component';
 import { CsubinterComponent } from './cinter/csubinter/csubinter.component';
+import { TformsComponent } from './tforms/tforms.component';
 
 
 @NgModule({
@@ -23,11 +24,13 @@ import { CsubinterComponent } from './cinter/csubinter/csubinter.component';
     ChangecolorDirective,
     CardDirective,
     CinterComponent,
-    CsubinterComponent
+    CsubinterComponent,
+    TformsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
