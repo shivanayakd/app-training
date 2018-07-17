@@ -1,6 +1,22 @@
 
-<div class="btn-group-vertical">
-    <a class="btn btn-default" href="#" role="button">Top</a>
-    <a class="btn btn-default" href="#" role="button">Middle</a>
-    <a class="btn btn-default" href="#" role="button">Bottom</a>
-</div>
+<nav class="navbar navbar-default" role="navigation">
+    <a class="navbar-brand" href="#">Angular 6</a>
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="">Home</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="dbinding">Data Binding</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="mydirectives">Directives</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="cinter">Component Interaction</a>
+        </li>
+        <li routerLinkActive="active">
+            <a [routerLink]="['forms']">Forms</a>
+        </li>
+    </ul>
+</nav>

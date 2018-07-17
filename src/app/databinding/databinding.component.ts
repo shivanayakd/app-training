@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-databinding',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DatabindingComponent implements OnInit {
   inval: number;
   istextboxactive: boolean;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.inval = 25;
@@ -29,6 +30,12 @@ export class DatabindingComponent implements OnInit {
     } else if (i === 1 ) {
       this.inval++;
     }
+  }
+
+  onclick() {
+    console.log('some complex operation dome...!');
+    this.router.navigate(['cinter']);
+
   }
 
 }

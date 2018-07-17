@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { Routes, RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent} from './nav/navigation.component';
 import { MainComponent } from './main/main.component';
@@ -12,7 +14,16 @@ import { CardDirective } from './directives/card.directive';
 import { CinterComponent } from './cinter/cinter.component';
 import { CsubinterComponent } from './cinter/csubinter/csubinter.component';
 import { TformsComponent } from './tforms/tforms.component';
+import { TakeparamsComponent } from './cinter/takeparams/takeparams.component';
 
+const myroutes: Routes = [
+  {path: '', component: MainComponent},
+  {path: 'dbinding', component: DatabindingComponent},
+  {path: 'mydirectives', component: MydirectivesComponent},
+  {path: 'cinter', component: CinterComponent},
+  {path: 'cinter/:id', component: TakeparamsComponent},
+  {path: 'forms', component: TformsComponent}
+];
 
 @NgModule({
   declarations: [
@@ -25,12 +36,14 @@ import { TformsComponent } from './tforms/tforms.component';
     CardDirective,
     CinterComponent,
     CsubinterComponent,
-    TformsComponent
+    TformsComponent,
+    TakeparamsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(myroutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
