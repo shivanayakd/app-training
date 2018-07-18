@@ -15,6 +15,9 @@ import { CinterComponent } from './cinter/cinter.component';
 import { CsubinterComponent } from './cinter/csubinter/csubinter.component';
 import { TformsComponent } from './tforms/tforms.component';
 import { TakeparamsComponent } from './cinter/takeparams/takeparams.component';
+import { BooksComponent } from './books/books.component';
+import { BookComponent } from './books/book/book.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const myroutes: Routes = [
   {path: '', component: MainComponent},
@@ -22,7 +25,12 @@ const myroutes: Routes = [
   {path: 'mydirectives', component: MydirectivesComponent},
   {path: 'cinter', component: CinterComponent},
   {path: 'cinter/:id', component: TakeparamsComponent},
-  {path: 'forms', component: TformsComponent}
+  {path: 'forms', component: TformsComponent},
+  {path: 'books', component: BooksComponent, children: [
+    {path: ':id/:name', component: BookComponent}
+  ]},
+  {path: 'notfound', component: PagenotfoundComponent},
+  {path: '**', redirectTo: 'notfound', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -37,7 +45,10 @@ const myroutes: Routes = [
     CinterComponent,
     CsubinterComponent,
     TformsComponent,
-    TakeparamsComponent
+    TakeparamsComponent,
+    BooksComponent,
+    BookComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

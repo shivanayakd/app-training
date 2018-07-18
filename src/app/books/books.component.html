@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let book of books" (click)="loadBook(book)">
+          <!-- <li class="list-group-item" *ngFor="let book of books"> -->
+         <!-- <a [routerLink]="['/books', book.id, book.name]"
+            [queryParams]="{edit: 1, isloggedin: true}"
+            fragment = "contact"> -->
+             {{ book.id }} ----- {{ book.name}}
+              <!-- </a> -->
+        </li>
+      </ul>
+      
+    </div>
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
