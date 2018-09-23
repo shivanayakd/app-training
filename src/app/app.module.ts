@@ -18,12 +18,16 @@ import { TakeparamsComponent } from './cinter/takeparams/takeparams.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './books/book/book.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ServicescompComponent } from './servicescomp/servicescomp.component';
+import { AddwebsiteComponent } from './servicescomp/addwebsite/addwebsite.component';
+import { WebsitestatusComponent } from './servicescomp/websitestatus/websitestatus.component';
+import { WebsiteService } from './servicescomp/website.service';
 
 const myroutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'dbinding', component: DatabindingComponent},
-  {path: 'mydirectives', component: MydirectivesComponent},
   {path: 'cinter', component: CinterComponent},
+  {path: 'servicescomp', component: ServicescompComponent},
   {path: 'cinter/:id', component: TakeparamsComponent},
   {path: 'forms', component: TformsComponent},
   {path: 'books', component: BooksComponent, children: [
@@ -48,7 +52,10 @@ const myroutes: Routes = [
     TakeparamsComponent,
     BooksComponent,
     BookComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ServicescompComponent,
+    AddwebsiteComponent,
+    WebsitestatusComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,7 @@ const myroutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(myroutes)
   ],
-  providers: [],
+  providers: [WebsiteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
