@@ -22,6 +22,7 @@ import { ServicescompComponent } from './servicescomp/servicescomp.component';
 import { AddwebsiteComponent } from './servicescomp/addwebsite/addwebsite.component';
 import { WebsitestatusComponent } from './servicescomp/websitestatus/websitestatus.component';
 import { WebsiteService } from './servicescomp/website.service';
+import { RxobserableComponent } from './rxobserable/rxobserable.component';
 
 const myroutes: Routes = [
   {path: '', component: MainComponent},
@@ -55,7 +56,8 @@ const myroutes: Routes = [
     PagenotfoundComponent,
     ServicescompComponent,
     AddwebsiteComponent,
-    WebsitestatusComponent
+    WebsitestatusComponent,
+    RxobserableComponent
   ],
   imports: [
     BrowserModule,
