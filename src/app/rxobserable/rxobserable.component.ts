@@ -2,12 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { interval, Observable, Observer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 @Component({
   selector: 'app-rxobserable',
   templateUrl: './rxobserable.component.html',
   styleUrls: ['./rxobserable.component.css']
 })
+
 export class RxobserableComponent implements OnInit, OnDestroy {
   firstsub;
   secondsub;
@@ -21,7 +21,6 @@ export class RxobserableComponent implements OnInit, OnDestroy {
    this.firstsub = source.subscribe((data) => {
       console.log('from sub-->', data);
     })
-
 
     const custom = Observable.create(
       (ob: Observer<any>) => {
@@ -40,8 +39,7 @@ export class RxobserableComponent implements OnInit, OnDestroy {
         setTimeout(() => {
           ob.next('third data data');
         }, 6000);
-      }
-    );
+      });
 
     this.secondsub = custom.subscribe(
       (data) => {
@@ -59,4 +57,20 @@ export class RxobserableComponent implements OnInit, OnDestroy {
       this.firstsub.unsubscribe();
       this.secondsub.unsubscribe();
     }
+
+    // let finaldata = [];
+    // this.service1.getstep1Data().subscribe((data1) => {
+    //   // data1 = { name : 'abc', urls : ['http://url1.com','http://url2.com',........,'http://urlz.com']};
+    //   data1.urls.foreach((url) => {
+    //     this.service2.getstep2Data().subscribe((data2) => {
+    //       // data2 = { name : 'abc', urls : ['http://url1.com','http://url2.com',........,'http://urlz.com']};
+    //       data2.urls.foreach((url) => {
+    //         this.service3.getfinalData().subscribe((data) => {
+    //           // data = ["one","two"...."xyz"]
+    //           finaldata.push(data[0]);
+    //         })
+    //       })
+    //     })
+    //   })
+    // })
 }

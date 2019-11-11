@@ -18,6 +18,15 @@ export class TformsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+
+    //  test filter
+
+
+    let obj = [{name: "FNM00163500929", type: "xio", displayName: "FNM00163500929", version: "6.1.0-99_X2", model: "XtremIO"},
+    {name: "000197800769", type: "managedStorageSystem", displayName: "000197800769", version: "5977", model: "VMAX250F"}];
+    console.log('test filter^^^^^^^^^^^^^^', obj.map(a => a.name).join(","));
+
+
     this.createmyreactiveform();
     this.category = ['food', 'drinks', 'deserts'];
     this.menuItems = [
